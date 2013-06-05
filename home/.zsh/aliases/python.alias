@@ -1,3 +1,5 @@
 #!/usr/local/env zsh
 
 # PIP Aliases
+
+alias start_http='python -m SimpleHTTPServer 8080'
