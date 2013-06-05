@@ -82,7 +82,7 @@ export LESS='-m'
 # ----------------------------------------
 # Additional path
 # ----------------------------------------
-export PATH=$HOME/bin:$PATH:/Developer/usr/bin
+export PATH=$HOME/Dropbox/bin:$PATH:/Developer/usr/bin
 
 # ----------------------------------------
 # Ruby settings
