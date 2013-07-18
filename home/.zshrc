@@ -37,7 +37,8 @@ source $ZSH/oh-my-zsh.sh
 export ARCHFLAGS="-arch x86_64"
 
 # Customize to your needs...
-export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:/Users/kevinkirkup/Dropbox/bin
 
 ############################################################
 # Aliases
@@ -67,6 +68,12 @@ export PYTHONSTARTUP=$HOME/.python/startup.py
 # ----------------------------------------
 export TERM="xterm-256color"
 export EMAIL=kevin.kirkup@gmail.com
+
+# ----------------------------------------
+# Node.js setup
+# ----------------------------------------
+export NODE_PATH=/usr/local/lib/node_modules
+export PATH=$PATH:$HOME/node_modules/.bin
 
 # ----------------------------------------
 # Set vi editing mode
@@ -124,6 +131,11 @@ export GREP_OPTIONS
 # Add Homebrew to the path
 # ----------------------------------------
 export PATH=/usr/local/bin:$PATH
+
+# ----------------------------------------
+# Add Latex to the path
+# ----------------------------------------
+export PATH=$PATH:/usr/local/texlive/2012/bin/universal-darwin
 
 # ----------------------------------------
 # Turn on minor directory spellchecking for cd
