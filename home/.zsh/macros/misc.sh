@@ -20,10 +20,3 @@ function extract() {
        *)       echo "'$1' unknown compression type" ;;
      esac
 }
-
-############################################################
-# Function to demux the raw AAC audio from the specified TS file
-function demux_aac() {
-  for i ($*)
-    `ffmpeg -i $i -codec:a copy ${i%.ts}.aac`
-}
