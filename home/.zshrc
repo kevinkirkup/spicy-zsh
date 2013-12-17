@@ -29,7 +29,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git npm brew bundler gem github git-flow gnu-utils osx rails3 rake ruby rvm textmate vi-mode)
+plugins=(git brew bundler gem github git-flow gnu-utils osx rake python pyenv pylint pip ruby rvm postgres pod vi-mode encode64 colorize extract xcode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 export ARCHFLAGS="-arch x86_64"
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:/Users/kevinkirkup/Dropbox/bin
 
 ############################################################
