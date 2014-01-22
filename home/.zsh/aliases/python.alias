@@ -2,5 +2,5 @@
 
 # PIP Aliases
 
-alias start_http='python -m SimpleHTTPServer 8080'
+alias servethis='python -m SimpleHTTPServer 8080'
 alias ipn='ipython notebook --pylab inline'
