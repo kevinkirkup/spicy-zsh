@@ -2,7 +2,7 @@
 
 ############################################################
 # Function to extract archives
-function localize_project() {
-  find . -name \*.m | xargs genstrings -o en.lproj
-  find . -name \*.xib | xargs -t -I '{}' ibtool --generate-strings '{}'.strings '{}'
+function enable_preview_selection() {
+  defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+  killall Finder
 }
