@@ -89,7 +89,8 @@ export LESS='-m'
 # ----------------------------------------
 # Additional path
 # ----------------------------------------
-export PATH=$HOME/Dropbox/bin:$PATH:/Developer/usr/bin
+export PATH=$HOME/Dropbox/bin:$PATH
+export PATH=$PATH:/Developer/usr/bin
 
 # ----------------------------------------
 # Ruby settings
@@ -169,4 +170,5 @@ export dirstacksize=5
 # setopt AUTOPUSHD PUSHDMINUS PUSHDTOHOME
 # setopt cdablevars
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
