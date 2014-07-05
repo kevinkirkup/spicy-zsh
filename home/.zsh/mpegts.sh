@@ -3,7 +3,7 @@
 #####################################
 # Function to decode the pts of the first filtered packet packet
 function first_packet() {
-  ffprobe -i $2 -sexagesimal -pretty -show_packets -print_format compact 2>$1 >/dev/null | grep "$1" | sed -n 1p
+  ffprobe -i $2 -sexagesimal -pretty -show_packets -print_format compact 2>&1 >/dev/null | grep "$1" | sed -n 1p
 }
 
 #####################################

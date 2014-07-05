@@ -1,8 +1,0 @@
-#!/usr/local/env zsh
-
-# OSX alias'
-
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-
-# Terminal Calendar Alias's
-alias calm='/usr/bin/cal $(date "+%m %Y")'

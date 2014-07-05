@@ -29,7 +29,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler gem github git-flow gnu-utils osx rake python pyenv pylint pip ruby rvm postgres pod vi-mode encode64 colorize extract xcode)
+plugins=(git brew bundler gem github git-flow gnu-utils osx rake python pyenv pylint pip autopep8 ruby rvm postgres pod vi-mode encode64 colorize extract xcode vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,26 +39,14 @@ export ARCHFLAGS="-arch x86_64"
 # Customize to your needs...
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:/Users/kevinkirkup/Dropbox/bin
+export PATH=$PATH:/Users/kevinkirkup/bin
 
 ############################################################
-# Aliases
+# Aliases & Functions
 ############################################################
-# Source all alias files
-for file in $HOME/.zsh/aliases/*.alias; do
+for file in $HOME/.zsh/*.sh; do
      source $file
 done
-
-############################################################
-# Functions
-############################################################
-for file in $HOME/.zsh/macros/*.sh; do
-     source $file
-done
-
-# ----------------------------------------
-# RVM
-# ----------------------------------------
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # ----------------------------------------
 # Python
@@ -74,6 +62,11 @@ export EMAIL=kevin.kirkup@gmail.com
 # ----------------------------------------
 export NODE_PATH=/usr/local/lib/node_modules
 export PATH=$PATH:$HOME/node_modules/.bin
+
+# ----------------------------------------
+# Vagrant setup
+# ----------------------------------------
+export VAGRANT_DEFAULT_PROVIDER=parallels
 
 # ----------------------------------------
 # Set vi editing mode
@@ -93,16 +86,14 @@ export PATH=$HOME/Dropbox/bin:$PATH
 export PATH=$PATH:/Developer/usr/bin
 
 # ----------------------------------------
-# Ruby settings
-# ----------------------------------------
-#JRUBY_PATH=/usr/lib/jruby1.0/bin
-#export RUBYOPT=rubygems
-#export PATH=$PATH:$HOME/.gem/ruby/1.8/bin
-
-# ----------------------------------------
 # CDETS Settings
 # ----------------------------------------
 export CDETS_JAVA_HOME=/usr
+
+# ----------------------------------------
+# OSX Java settings
+# ----------------------------------------
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # ----------------------------------------
 # CCACHE Settings
@@ -170,5 +161,4 @@ export dirstacksize=5
 # setopt AUTOPUSHD PUSHDMINUS PUSHDTOHOME
 # setopt cdablevars
 
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
