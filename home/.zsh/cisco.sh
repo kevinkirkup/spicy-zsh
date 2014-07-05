@@ -17,8 +17,13 @@ alias facr="findcr -w Identifier,Headline ${CDETS_CMP_OPEN_QUERY} | sort"
 # List all of the open defects that are being tracked
 alias fahcr="findcr -w Severity,Identifier,Headline ${CDETS_CMP_OPEN_TRACKING_QUERY} | sort"
 
-alias vu=start_linux_encoder
-alias vd=stop_linux_encoder
+alias vu='vagrant up && vagrant ssh'
+alias vd='vagrant suspend'
+alias vp='vagrant provision'
+
+##################################################
+# Remove McAfee
+alias rm_mcafee='sudo /Library/McAfee/cma/uninstall.sh'
 
 ##################################################
 # Go to the Vagrant image an drop in to the shell
