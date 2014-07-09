@@ -29,7 +29,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler gem github git-flow gnu-utils osx rake python pyenv pylint pip autopep8 ruby rvm postgres pod vi-mode encode64 colorize extract xcode vagrant)
+plugins=(git git-flow brew bundler gem github gnu-utils osx rake python pyenv pylint pip autopep8 ruby rbenv postgres pod vi-mode encode64 colorize extract xcode vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
