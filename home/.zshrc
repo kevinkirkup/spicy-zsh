@@ -48,6 +48,10 @@ for file in $HOME/.zsh/*.sh; do
      source $file
 done
 
+for file in $HOME/.zsh/local/*.sh; do
+     source $file
+done
+
 # ----------------------------------------
 # Python
 # ----------------------------------------
