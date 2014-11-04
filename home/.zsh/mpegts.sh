@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+function dump_dts() {
+  ffprobe -i $2 -sexagesimal -pretty -show_packets -print_format compact 2>&1 >/dev/null | grep "$1" | awk -F'|' 'BEGIN{ OFS=", "; } { split($6, a, "="); split($7, b, "="); print a[2], b[2]; }'
+}
+
+function dump_pts() {
+  ffprobe -i $2 -sexagesimal -pretty -show_packets -print_format compact 2>&1 >/dev/null | grep "$1" | awk -F'|' 'BEGIN{ OFS=", "; } { split($4, a, "="); split($5, b, "="); print a[2], b[2]; }'
+}
+
 #####################################
 # Function to decode the pts of the first filtered packet packet
 function first_packet() {
