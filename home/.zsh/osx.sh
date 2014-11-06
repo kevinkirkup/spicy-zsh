@@ -20,3 +20,6 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 # Terminal Calendar Alias's
 alias calm='/usr/bin/cal $(date "+%m %Y")'
 
+# List the OSX USB Device Tree
+alias usbtree='system_profiler SPUSBDataType'
+
