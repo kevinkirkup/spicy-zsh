@@ -14,6 +14,9 @@ ZSH_THEME="sporty_256"
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
+# Set the language
+LANG="en_US.UTF-8"
+
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
@@ -60,6 +63,12 @@ export PYTHONSTARTUP=$HOME/.python/startup.py
 # ----------------------------------------
 export TERM="xterm-256color"
 export EMAIL=kevin.kirkup@gmail.com
+
+# ----------------------------------------
+# Ruby setup
+# ----------------------------------------
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH=$PATH:$HOME/.rbenv/bin
 
 # ----------------------------------------
 # Node.js setup
