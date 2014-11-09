@@ -32,7 +32,14 @@ LANG="en_US.UTF-8"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow brew bundler gem github gnu-utils osx rake python pyenv pylint pip autopep8 ruby rbenv postgres pod vi-mode encode64 colorize extract xcode vagrant)
+plugins=(
+  wd web-search tmux gnu-utils vi-mode colorize extract vagrant encode64
+  git git-flow github gitignore
+  brew osx xcode pod
+  bundler gem rake ruby rbenv
+  python pyenv pylint pip autopep8
+  postgres
+  node coffee cake bower docker)
 
 source $ZSH/oh-my-zsh.sh
 
