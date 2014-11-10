@@ -7,60 +7,53 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="sporty_256"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
 # Set the language
 LANG="en_US.UTF-8"
 
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+#--------------------------------------------------
+# Get the platform
+#--------------------------------------------------
+platform="unknown"
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+  platform='linux'
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(
-  wd web-search tmux gnu-utils vi-mode colorize extract vagrant encode64
-  git git-flow github gitignore
-  brew osx xcode pod
-  bundler gem rake ruby rbenv
-  python pyenv pylint pip autopep8
-  postgres
-  node coffee cake bower docker)
-
-source $ZSH/oh-my-zsh.sh
+elif [[ "$unamestr" == 'Darwin' ]]; then
+  platform='mac'
+fi
 
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
 
-# Customize to your needs...
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=$PATH:/Users/kevinkirkup/Dropbox/bin
-export PATH=$PATH:/Users/kevinkirkup/bin
-
 ############################################################
 # Aliases & Functions
 ############################################################
+
+# Platform specific
+for file in $HOME/.zsh/$platform/*.sh; do
+  source $file
+done
+
+# Local
+for file in $HOME/.zsh/local/*.sh; do
+     source $file
+done
+
+# generic
 for file in $HOME/.zsh/*.sh; do
      source $file
 done
 
-for file in $HOME/.zsh/local/*.sh; do
-     source $file
-done
+# ----------------------------------------
+# Additional path
+# ----------------------------------------
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:$HOME/Dropbox/bin
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:/Developer/usr/bin
 
 # ----------------------------------------
 # Python
@@ -98,12 +91,6 @@ set -o vi
 # ----------------------------------------
 export EDITOR='mate -w'
 export LESS='-m'
-
-# ----------------------------------------
-# Additional path
-# ----------------------------------------
-export PATH=$HOME/Dropbox/bin:$PATH
-export PATH=$PATH:/Developer/usr/bin
 
 # ----------------------------------------
 # CDETS Settings
