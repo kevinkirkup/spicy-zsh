@@ -81,18 +81,13 @@ set -o vi
 # ----------------------------------------
 # Export the default editor
 # ----------------------------------------
-export EDITOR='mate -w'
+export EDITOR='vim -w'
 export LESS='-m'
 
 # ----------------------------------------
 # CDETS Settings
 # ----------------------------------------
 export CDETS_JAVA_HOME=/usr
-
-# ----------------------------------------
-# OSX Java settings
-# ----------------------------------------
-export JAVA_HOME=$(/usr/libexec/java_home)
 
 # ----------------------------------------
 # CCACHE Settings
@@ -159,5 +154,3 @@ export dirstacksize=5
 # setopt AUTOCD
 # setopt AUTOPUSHD PUSHDMINUS PUSHDTOHOME
 # setopt cdablevars
-
-PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH

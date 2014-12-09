@@ -34,3 +34,10 @@ plugins=(
   node coffee cake bower docker)
 
 source $ZSH/oh-my-zsh.sh
+
+# ----------------------------------------
+# OSX Java settings
+# ----------------------------------------
+export JAVA_HOME=/opt/jdk/jdk1.8.0_20/bin/java
+export PATH=$PATH:/opt/jdk/jdk1.8.0_20/bin
+

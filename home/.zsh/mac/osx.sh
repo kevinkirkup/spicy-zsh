@@ -59,3 +59,12 @@ alias calm='/usr/bin/cal $(date "+%m %Y")'
 # List the OSX USB Device Tree
 alias usbtree='system_profiler SPUSBDataType'
 
+# ----------------------------------------
+# OSX Java settings
+# ----------------------------------------
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# ----------------------------------------
+# Postgres App
+# ----------------------------------------
+PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
