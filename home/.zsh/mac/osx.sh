@@ -68,3 +68,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Postgres App
 # ----------------------------------------
 PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
+
+# Show some cow love
+fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
