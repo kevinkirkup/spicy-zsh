@@ -87,3 +87,14 @@ export POWERLINE_DIR=/usr/local/lib/python2.7/site-packages/powerline
 
 # Source powerline status bar
 #source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+
+# ----------------------------------------
+# Alias
+# ----------------------------------------
+
+# LS Scripts
+alias l='ls -lCFG'
+alias ll='ls -laFG'
+alias ls='ls -FG'
+alias lsp='ls -F | less'

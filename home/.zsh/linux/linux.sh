@@ -56,3 +56,13 @@ export POWERLINE_DIR=/home/kkirkup/.local/lib/python2.7/site-packages/powerline
 # Source powerline status bar
 #export PATH=$PATH:$HOME/.local/bin
 #source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh
+
+# ----------------------------------------
+# Alias
+# ----------------------------------------
+
+# LS Scripts
+alias l='ls -lCF --color=auto'
+alias ll='ls -laF --color=auto'
+alias ls='ls -F --color=auto'
+alias lsp='ls -F | less'

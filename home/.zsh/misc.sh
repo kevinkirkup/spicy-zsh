@@ -9,12 +9,6 @@ alias l_socket='zmodload zsh/net/socket'
 # Less alias
 alias less='less -R'
 
-# LS Scripts
-alias l='ls -lCFG'
-alias ll='ls -laFG'
-alias ls='ls -FG'
-alias lsp='ls -F | less'
-
 alias pp='ps auxf | pager'
 
 ############################################################
