@@ -28,6 +28,7 @@ ZSH_THEME="sporty_256"
 plugins=(
   wd web-search tmux gnu-utils vi-mode colorize extract vagrant encode64
   git git-flow github gitignore
+  ssh-agent
   bundler gem rake ruby rbenv
   python pyenv pylint pip autopep8
   postgres
@@ -36,7 +37,21 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ----------------------------------------
-# OSX Java settings
+# Linux Java settings
 # ----------------------------------------
 export JAVA_HOME=/opt/jdk/jdk1.8.0_20/bin/java
 export PATH=$PATH:/opt/jdk/jdk1.8.0_20/bin
+
+# ----------------------------------------
+# SSH-Agent configuration settings
+# ----------------------------------------
+zstyle :omz:plugins:ssh-agent identities id_rsa
+zstyle :omz:plugins:ssh-agent lifetime 30m
+
+# ----------------------------------------
+# Powerline
+# ----------------------------------------
+
+# Source powerline status bar
+#export PATH=$PATH:$HOME/.local/bin
+#source /home/kkirkup/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
