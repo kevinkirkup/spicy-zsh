@@ -80,6 +80,7 @@ fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand()
 # ----------------------------------------
 # Powerline
 # ----------------------------------------
+export POWERLINE_DIR=/usr/local/lib/python2.7/site-packages/powerline
 
 # Make sure the powerline daemon is running
 #powerline-daemon -q
