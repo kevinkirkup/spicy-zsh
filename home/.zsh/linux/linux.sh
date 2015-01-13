@@ -54,9 +54,12 @@ zstyle :omz:plugins:ssh-agent lifetime 30m
 export POWERLINE_DIR=/home/kkirkup/.local/lib/python2.7/site-packages/powerline
 
 # Source powerline status bar
-#export PATH=$PATH:$HOME/.local/bin
-#source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh
+export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
+export POWERLINE_NO_ZSH_PROMPT="YES"
 
+export PATH=$PATH:$HOME/.local/bin
+source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh
+#
 # ----------------------------------------
 # Alias
 # ----------------------------------------
