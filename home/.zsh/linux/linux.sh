@@ -58,6 +58,9 @@ export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
 export POWERLINE_NO_ZSH_PROMPT="YES"
 
 export PATH=$PATH:$HOME/.local/bin
+
+# Make sure the powerline daemon is running
+powerline-daemon -q
 source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh
 #
 # ----------------------------------------
