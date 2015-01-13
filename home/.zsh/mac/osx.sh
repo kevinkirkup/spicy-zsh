@@ -65,10 +65,22 @@ alias usbtree='system_profiler SPUSBDataType'
 # ----------------------------------------
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+
 # ----------------------------------------
-# Postgres App
+# Additional PATH
 # ----------------------------------------
-PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
+
+# Developer Tools
+export PATH=$PATH:/Developer/usr/bin
+
+# Add Latex to the path
+export PATH=$PATH:/usr/local/texlive/2012/bin/universal-darwin
+
+#Postgres App
+export PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
+
+# Include the Android SDK path
+export PATH=${PATH}:/Volumes/HDD/adt-bundle-mac-x86_64-20130729/sdk/platform-tools
 
 # ----------------------------------------
 # Cowsay
@@ -88,6 +100,10 @@ export POWERLINE_DIR=/usr/local/lib/python2.7/site-packages/powerline
 # Source powerline status bar
 #source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
+# ----------------------------------------
+# Directory for third party tools
+# ----------------------------------------
+export THIRD_PARTY_TOOLS=/Volumes/iOS\ Development/ThirdParty_Tools
 
 # ----------------------------------------
 # Alias
@@ -98,3 +114,6 @@ alias l='ls -lCFG'
 alias ll='ls -laFG'
 alias ls='ls -FG'
 alias lsp='ls -F | less'
+
+# ADB alias's
+alias adbd='adb devices'

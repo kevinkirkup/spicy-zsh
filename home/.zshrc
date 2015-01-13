@@ -19,33 +19,12 @@ fi
 
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
-
-############################################################
-# Aliases & Functions
-############################################################
-
-# Platform specific
-for file in $HOME/.zsh/$platform/*.sh; do
-  source $file
-done
-
-# Local
-for file in $HOME/.zsh/local/*.sh; do
-     source $file
-done
-
-# generic
-for file in $HOME/.zsh/*.sh; do
-     source $file
-done
-
 # ----------------------------------------
 # Additional path
 # ----------------------------------------
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 export PATH=$PATH:$HOME/Dropbox/bin
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:/Developer/usr/bin
 
 # ----------------------------------------
 # Python
@@ -59,7 +38,6 @@ export EMAIL=kevin.kirkup@gmail.com
 # ----------------------------------------
 # Ruby setup
 # ----------------------------------------
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=$PATH:$HOME/.rbenv/bin
 
 # ----------------------------------------
@@ -113,15 +91,25 @@ done
 
 export GREP_OPTIONS
 
-# ----------------------------------------
-# Add Homebrew to the path
-# ----------------------------------------
-export PATH=/usr/local/bin:$PATH
+############################################################
+# Aliases & Functions
+############################################################
 
-# ----------------------------------------
-# Add Latex to the path
-# ----------------------------------------
-export PATH=$PATH:/usr/local/texlive/2012/bin/universal-darwin
+# Platform specific
+for file in $HOME/.zsh/$platform/*.sh; do
+  source $file
+done
+
+# Local
+for file in $HOME/.zsh/local/*.sh; do
+  source $file
+done
+
+# generic
+for file in $HOME/.zsh/*.sh; do
+  source $file
+done
+
 
 # ----------------------------------------
 # Turn on minor directory spellchecking for cd
