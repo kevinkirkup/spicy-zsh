@@ -105,11 +105,6 @@ powerline-daemon -q
 source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh
 
 # ----------------------------------------
-# Directory for third party tools
-# ----------------------------------------
-export THIRD_PARTY_TOOLS=/Volumes/iOS\ Development/ThirdParty_Tools
-
-# ----------------------------------------
 # Alias
 # ----------------------------------------
 
