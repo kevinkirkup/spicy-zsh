@@ -27,13 +27,14 @@ export PATH=$PATH:$HOME/Dropbox/bin
 export PATH=$PATH:$HOME/bin
 
 # ----------------------------------------
+# General
+# ----------------------------------------
+export TERM="xterm-256color"
+
+# ----------------------------------------
 # Python
 # ----------------------------------------
 export PYTHONSTARTUP=$HOME/.python/startup.py
-
-# ----------------------------------------
-export TERM="xterm-256color"
-export EMAIL=kevin.kirkup@gmail.com
 
 # ----------------------------------------
 # Ruby setup
