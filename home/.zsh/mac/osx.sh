@@ -26,8 +26,8 @@ ZSH_THEME="sporty_256"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-  wd web-search tmux gnu-utils vi-mode colorize extract vagrant encode64
-  tmux
+  wd web-search gnu-utils vi-mode colorize extract vagrant encode64
+  tmux tmuxinator
   git git-flow github gitignore
   brew osx xcode pod
   bundler gem rake ruby rbenv

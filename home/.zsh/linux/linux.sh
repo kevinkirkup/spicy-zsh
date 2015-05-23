@@ -26,7 +26,8 @@ ZSH_THEME="sporty_256"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 plugins=(
-  wd web-search tmux gnu-utils vi-mode colorize extract vagrant encode64
+  wd web-search gnu-utils vi-mode colorize extract vagrant encode64
+  tmux tmuxinator
   git git-flow github gitignore
   ssh-agent
   bundler gem rake ruby rbenv
