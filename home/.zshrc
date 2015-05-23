@@ -111,7 +111,6 @@ for file in $HOME/.zsh/*.sh; do
   source $file
 done
 
-
 # ----------------------------------------
 # Turn on minor directory spellchecking for cd
 # Enable command history and append the history
@@ -143,3 +142,6 @@ export dirstacksize=5
 # setopt AUTOCD
 # setopt AUTOPUSHD PUSHDMINUS PUSHDTOHOME
 # setopt cdablevars
+
+# --------------------------------------------------
+alias curl='noglob curl'
