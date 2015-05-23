@@ -66,3 +66,18 @@ function extract() {
        *)       echo "'$1' unknown compression type" ;;
      esac
 }
+
+# Create a 32 bit random password salt
+function create_salt() {
+  python -c 'import os, binascii; print binascii.hexlify(os.urandom(32))'
+}
+
+# Encrypt the password using the password to encrypt and the salt
+function help_encrypt() {
+  echo python -c 'import crypt; print crypt.crypt("This is my Password", "$1$SomeSalt$")'
+}
+
+# Create an SSL Certificate
+function create_ssl_certificates() {
+  openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout $1.key -out $1.crt
+}
