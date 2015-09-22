@@ -19,6 +19,7 @@ fi
 
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
+
 # ----------------------------------------
 # Additional path
 # ----------------------------------------
@@ -79,6 +80,11 @@ export CCACHE_NOLINK
 # Get Vim Path
 # ----------------------------------------
 export VIMRUNTIME=`vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015' `
+
+# ----------------------------------------
+# Gnu PG Settings
+# ----------------------------------------
+export GPG_TTY=`tty`
 
 # ----------------------------------------
 # Set default options for grep
