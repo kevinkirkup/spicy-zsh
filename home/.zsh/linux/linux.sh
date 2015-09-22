@@ -43,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 # ----------------------------------------
 # Linux Java settings
 # ----------------------------------------
-export JAVA_HOME=/opt/jdk/jdk1.8.0_20/bin/java
+export JAVA_HOME=/opt/jdk/jdk1.8.0_20
 export PATH=$PATH:/opt/jdk/jdk1.8.0_20/bin
 
 # ----------------------------------------
