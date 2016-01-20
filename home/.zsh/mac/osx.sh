@@ -95,13 +95,14 @@ fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand()
 # ----------------------------------------
 # Powerline
 # ----------------------------------------
-export POWERLINE_DIR=/usr/local/lib/python2.7/site-packages/powerline
+export POWERLINE_DIR=/Users/kevinkirkup/Library/Python/2.7/lib/python/site-packages/powerline
 
 # Source powerline status bar
 export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
 export POWERLINE_NO_ZSH_PROMPT="YES"
 
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/Library/Python/2.7/bin
 
 # Make sure the powerline daemon is running
 powerline-daemon -q
