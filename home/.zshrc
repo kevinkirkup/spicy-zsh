@@ -51,7 +51,7 @@ export PATH=$PATH:$HOME/node_modules/.bin
 # ----------------------------------------
 # Vagrant setup
 # ----------------------------------------
-export VAGRANT_DEFAULT_PROVIDER=parallels
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # ----------------------------------------
 # Set vi editing mode
