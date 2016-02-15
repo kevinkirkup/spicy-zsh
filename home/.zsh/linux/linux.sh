@@ -30,7 +30,7 @@ plugins=(
   sudo
   tmux tmuxinator
   gnu-utils vi-mode colorize extract encode64
-  git git-flow github gitignore git-extras
+  git git-flow github gitignore git-extras gitfast
   ssh-agent
   bundler gem rake ruby rbenv
   python pyenv pylint pip autopep8 celery
