@@ -76,6 +76,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Developer Tools
 export PATH=$PATH:/Developer/usr/bin
 
+# Python Tools
+export PATH=$PATH:${HOME}/Library/Python/2.7/bin
+
 # Add Latex to the path
 export PATH=$PATH:/usr/local/texlive/2012/bin/universal-darwin
 
@@ -95,7 +98,7 @@ fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand()
 # ----------------------------------------
 # Powerline
 # ----------------------------------------
-export POWERLINE_DIR=/Users/kevinkirkup/Library/Python/2.7/lib/python/site-packages/powerline
+export POWERLINE_DIR=${HOME}/Library/Python/2.7/lib/python/site-packages/powerline
 
 # Source powerline status bar
 export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
