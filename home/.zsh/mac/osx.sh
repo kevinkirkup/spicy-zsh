@@ -74,6 +74,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Additional PATH
 # ----------------------------------------
 
+# Random Shared tools
+export PATH=$PATH:$HOME/shared/bin
+
 # Developer Tools
 export PATH=$PATH:/Developer/usr/bin
 

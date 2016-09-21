@@ -24,7 +24,6 @@ export ARCHFLAGS="-arch x86_64"
 # Additional path
 # ----------------------------------------
 export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:
-export PATH=$PATH:$HOME/Dropbox/bin
 export PATH=$PATH:$HOME/bin
 
 # ----------------------------------------
