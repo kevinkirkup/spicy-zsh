@@ -83,9 +83,6 @@ export PATH=$PATH:/Developer/usr/bin
 # Python Tools
 export PATH=$PATH:${HOME}/Library/Python/2.7/bin
 
-# Add Latex to the path
-export PATH=$PATH:/usr/local/texlive/2012/bin/universal-darwin
-
 #Postgres App
 export PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
 
