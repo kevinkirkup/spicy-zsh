@@ -150,3 +150,8 @@ export dirstacksize=5
 
 # --------------------------------------------------
 alias curl='noglob curl'
+
+# --------------------------------------------------
+# Iterm 2 Shell integration
+# --------------------------------------------------
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
