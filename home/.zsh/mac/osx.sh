@@ -84,7 +84,7 @@ export PATH=$PATH:/Developer/usr/bin
 export PATH=$PATH:${HOME}/Library/Python/2.7/bin
 
 #Postgres App
-export PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH
+export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
 
 # Include the Android SDK path
 export PATH=${PATH}:/Volumes/HDD/adt-bundle-mac-x86_64-20130729/sdk/platform-tools
