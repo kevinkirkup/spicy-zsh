@@ -86,9 +86,6 @@ export PATH=$PATH:${HOME}/Library/Python/2.7/bin
 #Postgres App
 export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
 
-# Include the Android SDK path
-export PATH=${PATH}:/Volumes/HDD/adt-bundle-mac-x86_64-20130729/sdk/platform-tools
-
 # ----------------------------------------
 # Cowsay
 # ----------------------------------------
@@ -121,6 +118,3 @@ alias l='ls -lCFG'
 alias ll='ls -laFG'
 alias ls='ls -FG'
 alias lsp='ls -F | less'
-
-# ADB alias's
-alias adbd='adb devices'
