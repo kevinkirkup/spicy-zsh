@@ -36,7 +36,7 @@ plugins=(
   python pyenv pylint pip autopep8 celery
   postgres
   node coffee cake bower
-  docker docker-compose
+  docker docker-compose kubectl
   vagrant)
 
 source $ZSH/oh-my-zsh.sh
