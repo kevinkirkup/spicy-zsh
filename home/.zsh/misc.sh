@@ -62,7 +62,7 @@ function extract() {
        *.jar)     unzip "$1" ;;
        *.apk)     unzip "$1" ;;
        *.Z)       uncompress "$1" ;;
-       *.rpm)      rpm2cpio.pl "$1" | cpio -vid ;;
+       *.rpm)     rpm2cpio.pl "$1" | cpio -idmv ;;
        *)       echo "'$1' unknown compression type" ;;
      esac
 }
