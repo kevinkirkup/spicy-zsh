@@ -29,15 +29,18 @@ plugins=(
   wd web-search
   sudo
   tmux tmuxinator
+  docker docker-compose kubectl
   gnu-utils vi-mode colorize extract encode64
-  git git-flow github gitignore git-extras gitfast
+  git git-flow github gitignore git-extras gitfast tig
   ssh-agent
   bundler gem rake ruby rbenv
-  python pyenv pylint pip autopep8 celery
+  python pyenv pylint pip autopep8 celery virtualenv
   postgres
-  node coffee cake bower
-  docker docker-compose kubectl
-  vagrant)
+  node npm
+  coffee cake bower grunt
+  vagrant
+  yum
+  )
 
 source $ZSH/oh-my-zsh.sh
 
