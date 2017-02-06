@@ -32,6 +32,7 @@ plugins=(
   docker docker-compose kubectl
   gnu-utils vi-mode colorize extract encode64
   git git-flow github gitignore git-extras tig
+  go golang
   brew osx xcode pod
   bundler gem rake ruby rbenv
   python pyenv pylint pip autopep8 celery virtualenv
