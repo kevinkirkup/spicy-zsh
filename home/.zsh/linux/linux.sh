@@ -29,7 +29,7 @@ plugins=(
   wd web-search
   sudo
   tmux tmuxinator
-  docker docker-compose kubectl
+  docker docker-compose kubectl oc
   gnu-utils vi-mode colorize extract encode64
   git git-flow github gitignore git-extras gitfast tig
   go golang

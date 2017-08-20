@@ -29,13 +29,14 @@ plugins=(
   wd web-search
   sudo
   tmux tmuxinator
-  docker docker-compose kubectl
+  docker docker-compose kubectl oc
   gnu-utils vi-mode colorize extract encode64
   git git-flow github gitignore git-extras tig
   go golang
   brew osx xcode pod
   bundler gem rake ruby rbenv
   python pyenv pylint pip autopep8 celery virtualenv
+  swiftpm
   postgres
   node npm
   coffee cake bower grunt
@@ -87,6 +88,9 @@ export PATH=$PATH:${HOME}/Library/Python/2.7/bin
 
 #Postgres App
 export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
+
+# Continuum Analytics Anaconda configuration and environment
+export PATH=$PATH:${HOME}/anaconda2/bin
 
 # ----------------------------------------
 # Cowsay
