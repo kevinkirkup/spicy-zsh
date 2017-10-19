@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Path to my cowfiles
+export COWPATH=~/.cowsay
+
 # ZSH alias
 alias l_math='zmodload zsh/mathfunc'
 alias l_socket='zmodload zsh/net/socket'
