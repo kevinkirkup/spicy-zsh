@@ -45,17 +45,24 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 ############################################################
-# Function to extract archives
+# Helper functions
+############################################################
+
+# Function to enable preview selection in Finder
 function enable_preview_selection() {
   defaults write com.apple.finder QLEnableTextSelection -bool TRUE
   killall Finder
 }
 
+# Function to get the IPV4 address of the specified interface
+function interface_ip4() {
+  ifconfig $1 inet | awk 'NR>1 { print $2 }'
+}
+
 # Kills any process that matches a regexp passed to it
-killit() {
+function killit() {
     ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill
 }
-#!/usr/local/env zsh
 
 # OSX alias'
 
