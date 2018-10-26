@@ -35,7 +35,7 @@ plugins=(
   go golang
   brew osx xcode pod
   bundler gem rake ruby rbenv
-  python pyenv pylint pip autopep8 celery virtualenv
+  python pyenv pylint autopep8 celery
   swiftpm
   postgres
   node npm
@@ -97,7 +97,7 @@ export PATH=$PATH:${HOME}/Library/Python/2.7/bin
 export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
 
 # Continuum Analytics Anaconda configuration and environment
-export PATH=$PATH:${HOME}/anaconda2/bin
+export PATH=$PATH:${HOME}/anaconda3/bin
 
 # ----------------------------------------
 # Cowsay
@@ -109,14 +109,14 @@ fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand()
 # ----------------------------------------
 # Powerline
 # ----------------------------------------
-export POWERLINE_DIR=${HOME}/Library/Python/3.6/lib/python/site-packages/powerline
+export POWERLINE_DIR=/usr/local/lib/python3.7/site-packages/powerline
 
 # Source powerline status bar
 export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
 export POWERLINE_NO_ZSH_PROMPT="YES"
 
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/Library/Python/3.6/bin
+export PATH=$PATH:$HOME/Library/Python/3.7/bin
 
 # Make sure the powerline daemon is running
 powerline-daemon -q
