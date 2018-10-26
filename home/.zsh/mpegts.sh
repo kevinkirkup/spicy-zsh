@@ -1,11 +1,23 @@
 #!/usr/bin/env zsh
 
+#####################################
+# Function to dump the DTS values from a stream
+# args: <filter> <filename>
 function dump_dts() {
   ffprobe -i $2 -sexagesimal -pretty -show_packets -print_format compact 2>&1 >/dev/null | grep "$1" | awk -F'|' 'BEGIN{ OFS=", "; } { split($6, a, "="); split($7, b, "="); print a[2], b[2]; }'
 }
 
+#####################################
+# Function to dump the PTS values from a stream
+# args: <filter> <filename>
 function dump_pts() {
   ffprobe -i $2 -sexagesimal -pretty -show_packets -print_format compact 2>&1 >/dev/null | grep "$1" | awk -F'|' 'BEGIN{ OFS=", "; } { split($4, a, "="); split($5, b, "="); print a[2], b[2]; }'
+}
+
+#####################################
+# Function to show the deltas for DTS and PTS values using the functions above
+function show_deltas() {
+   awk -F", " 'p { print $1-p } { p=$1 }'
 }
 
 #####################################
