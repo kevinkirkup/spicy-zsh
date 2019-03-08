@@ -47,7 +47,8 @@ plugins=(
   postgres
   node npm
   coffee cake bower grunt
-  vagrant)
+  ansible vagrant
+  terraform)
 
 source $ZSH/oh-my-zsh.sh
 
