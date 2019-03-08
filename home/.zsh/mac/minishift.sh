@@ -34,7 +34,6 @@ function minishift_setup() {
 
   oc login -u developer -p developer
 
-
   # Set back to original values
   #minishift config unset http-proxy
   #minishift config unset https-proxy
