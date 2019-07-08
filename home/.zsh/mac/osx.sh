@@ -33,7 +33,7 @@ plugins=(
   docker docker-compose docker-machine boot2docker
   kubectl oc helm kops
   gnu-utils vi-mode colorize extract encode64
-  git git-flow github gitignore git-extras tig
+  git-flow github gitignore git-extras tig gitfast git-prompt
   go golang
   rust cargo
   cabal
