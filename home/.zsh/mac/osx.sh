@@ -52,6 +52,28 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# ----------------------------------------------------------
+# Prompt
+# ----------------------------------------------------------
+#export RPROMPT='%B%F{208}%n%f%{$fg_bold[white]%}@%F{039}%m%f%{$reset_color%}-%D{%c}'
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[blue]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{●%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
+ZSH_THEME_GIT_PROMPT_CACHE="TRUE"
+
+# Set the prompt.
+RPROMPT='$(git_super_status)'
+PROMPT='%{$fg_bold[blue]%}%F{208}%c%f %{$fg_bold[white]%}%# %{$reset_color%}'
+
+
 ############################################################
 # Helper functions
 ############################################################
@@ -122,7 +144,6 @@ export POWERLINE_DIR=/usr/local/lib/python3.7/site-packages/powerline
 # Source powerline status bar
 export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
 export POWERLINE_NO_ZSH_PROMPT="YES"
-export RPROMPT='%B%F{208}%n%f%{$fg_bold[white]%}@%F{039}%m%f%{$reset_color%}-%D{%c}'
 
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/Library/Python/3.7/bin
