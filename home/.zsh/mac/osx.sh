@@ -42,7 +42,6 @@ plugins=(
   python pyenv pylint autopep8 celery
   swiftpm
   gradle
-  jira
   jsontools
   postgres
   node npm
