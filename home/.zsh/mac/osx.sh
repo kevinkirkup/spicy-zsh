@@ -34,8 +34,8 @@ plugins=(
   kubectl oc helm kops
   gnu-utils vi-mode colorize extract encode64
   git-flow github gitignore git-extras tig gitfast git-prompt
-  go golang
-  rust cargo
+  golang
+  rust rustup cargo
   cabal
   brew osx xcode pod
   bundler gem rake ruby rbenv
