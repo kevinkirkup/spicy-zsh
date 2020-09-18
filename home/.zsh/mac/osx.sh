@@ -160,9 +160,3 @@ alias l='ls -lCFG'
 alias ll='ls -laFG'
 alias ls='ls -FG'
 alias lsp='ls -F | less'
-
-# ADB alias's
-alias adbd='adb devices'
-
-# Postgresql
-alias pg_start='pg_ctl -D /usr/local/var/postgres start'
