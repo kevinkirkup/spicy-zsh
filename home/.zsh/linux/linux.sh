@@ -41,7 +41,7 @@ plugins=(
   coffee cake bower grunt
   vagrant
   yum
-  )
+)
 
 source $ZSH/oh-my-zsh.sh
 

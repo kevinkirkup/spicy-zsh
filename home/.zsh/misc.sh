@@ -92,3 +92,35 @@ function help_encrypt() {
 function create_ssl_certificates() {
   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout $1.key -out $1.crt
 }
+
+# Pipe output through GRC for color coding
+alias tail='grc tail'
+alias nmap='grc nmap'
+alias ps='grc ps'
+alias ifconfig='grc ifconfig'
+alias dig='grc dig'
+alias fdisk='grc fdisk'
+
+# Function to convert a JSON document in to a YAML document
+function json2yaml() {
+
+  local JSON_FILE=$1
+  local YAML_FILE="${JSON_FILE%.json}.yml"
+
+  python -c 'import sys, yaml, json; yaml.safe_dump(json.load(sys.stdin), sys.stdout, default_flow_style=False)' < ${JSON_FILE} > ${YAML_FILE}
+}
+
+# Function to convert a YAML document in to a JSON document
+function yaml2json() {
+
+  local YAML_FILE=$1
+  local JSON_FILE="${YAML_FILE%.*}.json"
+
+  python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' < ${JSON_FILE} > ${YAML_FILE}
+}
+
+function timestamp() {
+
+  local BUILD_DATE=$(date -u +%FT%T)
+  echo $BUILD_DATE | sed 's/[T:-]//g'
+}

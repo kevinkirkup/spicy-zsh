@@ -28,7 +28,6 @@ ZSH_THEME="sporty_256"
 plugins=(
   wd web-search
   iterm2
-  sudo
   tmux tmuxinator
   docker docker-compose docker-machine boot2docker
   kubectl oc helm kops
@@ -47,7 +46,8 @@ plugins=(
   node npm
   coffee cake bower grunt
   ansible vagrant
-  terraform)
+  terraform
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,20 +132,21 @@ export PATH=$PATH:${HOME}/anaconda3/bin
 # Cowsay
 # ----------------------------------------
 
-# Show some cow love
-fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+# Show some cow love if we aren't in Tmux
+if [ -z "$TMUX" ]; then
+  fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+fi
 
 # ----------------------------------------
 # Powerline
 # ----------------------------------------
-export POWERLINE_DIR=/usr/local/lib/python3.7/site-packages/powerline
+export POWERLINE_DIR=/usr/local/lib/python3.8/site-packages/powerline
 
 # Source powerline status bar
 export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
 export POWERLINE_NO_ZSH_PROMPT="YES"
 
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/Library/Python/3.7/bin
 
 # Make sure the powerline daemon is running
 powerline-daemon -q
