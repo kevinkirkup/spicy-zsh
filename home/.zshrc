@@ -64,9 +64,9 @@ export EDITOR='vim -w'
 export LESS='-m'
 
 # ----------------------------------------
-# CDETS Settings
+# Perl settings
 # ----------------------------------------
-export CDETS_JAVA_HOME=/usr
+export PERL5LIB=$HOME/perl5/lib/perl5
 
 # ----------------------------------------
 # CCACHE Settings
