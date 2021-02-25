@@ -29,28 +29,12 @@ export PATH=$PATH:$HOME/bin
 # ----------------------------------------
 # General
 # ----------------------------------------
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
 
 # ----------------------------------------
 # Python
 # ----------------------------------------
 export PYTHONSTARTUP=$HOME/.python/startup.py
-
-# ----------------------------------------
-# Ruby setup
-# ----------------------------------------
-export PATH=$PATH:$HOME/.rbenv/bin
-
-# ----------------------------------------
-# Node.js setup
-# ----------------------------------------
-export NODE_PATH=/usr/local/lib/node_modules
-export PATH=$PATH:$HOME/node_modules/.bin
-
-# ----------------------------------------
-# Vagrant setup
-# ----------------------------------------
-export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # ----------------------------------------
 # Set vi editing mode
@@ -67,13 +51,6 @@ export LESS='-m'
 # Perl settings
 # ----------------------------------------
 export PERL5LIB=$HOME/perl5/lib/perl5
-
-# ----------------------------------------
-# CCACHE Settings
-# ----------------------------------------
-export CCACHE_DIR=/var/cache/ccache
-export CCACHE_UMASK=002
-export CCACHE_NOLINK
 
 # ----------------------------------------
 # Get Vim Path
@@ -163,3 +140,32 @@ alias curl='noglob curl'
 
 eval "$(starship init zsh)"
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/kevinkirkup/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/kevinkirkup/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kevinkirkup/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/kevinkirkup/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# ----------------------------------------
+# Powerline
+# ----------------------------------------
+export POWERLINE_DIR=/usr/local/lib/python3.8/site-packages/powerline
+
+# Source powerline status bar
+export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
+export POWERLINE_NO_ZSH_PROMPT="YES"
+
+export PATH=$PATH:$HOME/.local/bin
+
+# Make sure the powerline daemon is running
+powerline-daemon -q
+source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh

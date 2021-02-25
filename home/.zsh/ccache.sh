@@ -1,7 +1,8 @@
 #!/usr/local/env zsh
 
 # ----------------------------------------
-# Node.js setup
+# CCACHE Settings
 # ----------------------------------------
-export NODE_PATH=/usr/local/lib/node_modules
-export PATH=$PATH:$HOME/node_modules/.bin
+export CCACHE_DIR=/var/cache/ccache
+export CCACHE_UMASK=002
+export CCACHE_NOLINK

@@ -47,6 +47,7 @@ plugins=(
   coffee cake bower grunt
   ansible vagrant
   terraform
+  grc
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,8 +126,10 @@ export PATH=$PATH:${HOME}/Library/Python/2.7/bin
 #Postgres App
 export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
 
-# Continuum Analytics Anaconda configuration and environment
-export PATH=$PATH:${HOME}/anaconda3/bin
+# ----------------------------------------
+# TCL library path
+# ----------------------------------------
+export TCLLIBPATH="/usr/local/lib"
 
 # ----------------------------------------
 # Cowsay
@@ -136,21 +139,6 @@ export PATH=$PATH:${HOME}/anaconda3/bin
 if [ -z "$TMUX" ]; then
   fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
 fi
-
-# ----------------------------------------
-# Powerline
-# ----------------------------------------
-export POWERLINE_DIR=/usr/local/lib/python3.8/site-packages/powerline
-
-# Source powerline status bar
-export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
-export POWERLINE_NO_ZSH_PROMPT="YES"
-
-export PATH=$PATH:$HOME/.local/bin
-
-# Make sure the powerline daemon is running
-powerline-daemon -q
-source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh
 
 # ----------------------------------------
 # Alias
