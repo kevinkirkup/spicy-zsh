@@ -27,20 +27,27 @@ ZSH_THEME="sporty_256"
 
 plugins=(
   wd web-search
+  grc
+  nmap
   sudo
   tmux tmuxinator
-  docker docker-compose kubectl oc
+  docker docker-compose docker-machine boot2docker
+  kubectl oc helm kops
   gnu-utils vi-mode colorize extract encode64
-  git git-flow github gitignore git-extras gitfast tig
-  go golang
+  git-flow github gitignore git-extras tig gitfast git-prompt
+  golang
+  rust rustup cargo
   ssh-agent
   bundler gem rake ruby rbenv
+  mix mix-fast
   python pyenv pylint pip autopep8 celery virtualenv
+  jsontools
   postgres
   node npm
-  coffee cake bower grunt
-  vagrant
+  bower grunt
+  ansible vagrant
   yum
+  terraform
 )
 
 source $ZSH/oh-my-zsh.sh

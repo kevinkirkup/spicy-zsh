@@ -27,7 +27,11 @@ ZSH_THEME="sporty_256"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   wd web-search
+  grc
+  nmap
   iterm2
+  brew osx xcode pod
+  keychain marked
   tmux tmuxinator
   docker docker-compose docker-machine boot2docker
   kubectl oc helm kops
@@ -35,19 +39,17 @@ plugins=(
   git-flow github gitignore git-extras tig gitfast git-prompt
   golang
   rust rustup cargo
-  cabal
-  brew osx xcode pod
   bundler gem rake ruby rbenv
+  mix mix-fast rebar
   python pyenv pylint autopep8 celery
   swiftpm
   gradle
   jsontools
   postgres
   node npm
-  coffee cake bower grunt
-  ansible vagrant
+  bower grunt
+  ansible
   terraform
-  grc
 )
 
 source $ZSH/oh-my-zsh.sh
