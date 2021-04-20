@@ -18,11 +18,6 @@ alias less='less -R'
 alias pp='ps auxf | pager'
 
 ############################################################
-# Tab Completion
-############################################################
-eval $(jira --completion-script-zsh)
-
-############################################################
 # List directories in lexicographical order
 # Most recent/oldest modified first
 function lt { ls -1trsa "$@" | tail; }
