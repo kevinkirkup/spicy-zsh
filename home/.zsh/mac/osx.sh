@@ -41,7 +41,7 @@ plugins=(
   rust rustup cargo
   bundler gem rake ruby rbenv
   mix mix-fast rebar
-  python pyenv pylint autopep8 celery
+  python pyenv pylint autopep8 celery poetry
   swiftpm
   gradle
   jsontools
