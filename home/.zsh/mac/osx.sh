@@ -31,7 +31,7 @@ plugins=(
   nmap
   iterm2
   brew osx xcode pod
-  keychain marked
+  keychain marked2
   tmux tmuxinator
   docker docker-compose docker-machine boot2docker
   kubectl oc helm kops
