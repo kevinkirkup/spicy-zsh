@@ -116,7 +116,7 @@ function yaml2json() {
   local YAML_FILE=$1
   local JSON_FILE="${YAML_FILE%.*}.json"
 
-  python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' < ${JSON_FILE} > ${YAML_FILE}
+  python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' < ${YAML_FILE} > ${JSON_FILE}
 }
 
 function timestamp() {
