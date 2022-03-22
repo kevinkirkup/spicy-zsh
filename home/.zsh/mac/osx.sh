@@ -39,7 +39,7 @@ plugins=(
   gnu-utils vi-mode colorize extract encode64
   git-flow github gitignore git-extras tig gitfast git-prompt
   # golang
-  rust rustup
+  rust
   # bundler gem rake ruby rbenv
   mix mix-fast rebar
   python pyenv pylint autopep8 celery poetry
