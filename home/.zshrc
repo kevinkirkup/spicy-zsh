@@ -44,7 +44,12 @@ set -o vi
 # ----------------------------------------
 # Export the default editor
 # ----------------------------------------
-export EDITOR='vim -w'
+if [ -n "$TMUX" ]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
 export LESS='-m'
 
 # ----------------------------------------

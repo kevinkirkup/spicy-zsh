@@ -1,5 +1,8 @@
 #!/usr/local/env zsh
 
+# Force color output from pytest
+export PYTEST_ADDOPTS="--color=yes"
+
 # PIP Aliases
 
 alias servethis='python -m SimpleHTTPServer 8080'

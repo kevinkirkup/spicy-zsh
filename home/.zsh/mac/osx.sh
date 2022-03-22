@@ -26,28 +26,29 @@ ZSH_THEME="sporty_256"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-  wd web-search
+  wd
+  web-search
   grc
   nmap
   iterm2
-  brew osx xcode pod
+  brew macos xcode pod
   keychain marked2
-  tmux tmuxinator
-  docker docker-compose docker-machine boot2docker
-  kubectl oc helm kops
+  tmux # tmuxinator
+  docker docker-compose #docker-machine boot2docker
+  kubectl #oc helm kops
   gnu-utils vi-mode colorize extract encode64
   git-flow github gitignore git-extras tig gitfast git-prompt
-  golang
-  rust rustup cargo
-  bundler gem rake ruby rbenv
+  # golang
+  rust rustup
+  # bundler gem rake ruby rbenv
   mix mix-fast rebar
   python pyenv pylint autopep8 celery poetry
-  swiftpm
-  gradle
+  # swiftpm
+  # gradle
   jsontools
   postgres
-  node npm
-  bower grunt
+  # node npm
+  # bower grunt
   ansible
   terraform
 )
