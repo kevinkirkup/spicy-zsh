@@ -32,22 +32,22 @@ plugins=(
   sudo
   tmux tmuxinator
   docker docker-compose docker-machine boot2docker
-  kubectl oc helm kops
+  kubectl # oc helm kops
   gnu-utils vi-mode colorize extract encode64
   git-flow github gitignore git-extras tig gitfast git-prompt
-  golang
-  rust rustup cargo
+  # golang
+  rust
   ssh-agent
-  bundler gem rake ruby rbenv
+  # bundler gem rake ruby rbenv
   mix mix-fast
   python pyenv pylint pip autopep8 celery virtualenv
   jsontools
   postgres
   node npm
   bower grunt
-  ansible vagrant
+  vagrant
   yum
-  terraform
+  terraform ansible
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -78,13 +78,3 @@ export PATH=$PATH:$HOME/.local/bin
 # Make sure the powerline daemon is running
 powerline-daemon -q
 source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh
-#
-# ----------------------------------------
-# Alias
-# ----------------------------------------
-
-# LS Scripts
-alias l='ls -lCF --color=auto'
-alias ll='ls -laF --color=auto'
-alias ls='ls -F --color=auto'
-alias lsp='ls -F | less'

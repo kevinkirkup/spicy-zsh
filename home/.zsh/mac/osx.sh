@@ -30,7 +30,6 @@ plugins=(
   web-search
   grc
   nmap
-  iterm2
   brew macos xcode pod
   keychain marked2
   tmux # tmuxinator
@@ -142,13 +141,3 @@ export TCLLIBPATH="/usr/local/lib"
 if [ -z "$TMUX" ]; then
   fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
 fi
-
-# ----------------------------------------
-# Alias
-# ----------------------------------------
-
-# LS Scripts
-alias l='ls -lCFG'
-alias ll='ls -laFG'
-alias ls='ls -FG'
-alias lsp='ls -F | less'
