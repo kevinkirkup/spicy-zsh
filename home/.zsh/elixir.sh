@@ -6,4 +6,4 @@
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Compile mix before running command line
-alias iexm=iex -S mix
+alias iexm="iex -S mix"

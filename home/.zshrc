@@ -46,9 +46,9 @@ set -o vi
 # Export the default editor
 # ----------------------------------------
 if [ -n "$TMUX" ]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vimr'
 fi
 
 export LESS='-m'
@@ -61,7 +61,7 @@ export PERL5LIB=$HOME/perl5/lib/perl5
 # ----------------------------------------
 # Get Vim Path
 # ----------------------------------------
-export VIMRUNTIME=`vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015' `
+# export VIMRUNTIME=`vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015' `
 
 # ----------------------------------------
 # Gnu PG Settings

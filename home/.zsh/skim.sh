@@ -5,12 +5,12 @@ export SKIM_DEFAULT_OPTIONS='--ansi --regex --delimiter ":" --prompt ">>> " --cm
 
 # Function to do fuzzy search for filename
 function skim_file_search() {
-  mvim --remote-tab-silent $(sk -m)
+  vimr --remote-tab-silent $(sk -m)
 }
 
 # Function to do fuzzy search of file contents
 function skim_file_content_search() {
-  mvim --remote-tab-silent $(sk -i -c 'rg --color=always --line-number "{}"' | awk -F: '{print " +" $2 " " $1 }')
+  vimr --remote-tab-silent $(sk -i -c 'rg --color=always --line-number "{}"' | awk -F: '{print " +" $2 " " $1 }')
 }
 
 alias ski='skim_file_search'

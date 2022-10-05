@@ -71,6 +71,8 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 ZSH_THEME_GIT_PROMPT_CACHE="TRUE"
 
+ZSH_TMUX_UNICODE=true
+
 # Set the prompt.
 RPROMPT='$(git_super_status)'
 PROMPT='%{$fg_bold[blue]%}%F{208}%c%f %{$fg_bold[white]%}%# %{$reset_color%}'
