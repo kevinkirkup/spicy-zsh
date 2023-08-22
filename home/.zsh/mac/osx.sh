@@ -126,6 +126,7 @@ export PATH=$PATH:/Developer/usr/bin
 
 # Python Tools
 export PATH=$PATH:${HOME}/Library/Python/2.7/bin
+export PATH=$PATH:${HOME}/Library/Python/3.10/bin
 
 #Postgres App
 export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH

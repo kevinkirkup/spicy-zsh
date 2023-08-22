@@ -51,3 +51,16 @@ function clone_repos() {
 
 }
 
+function update_repo() {
+  echo Updating repo $1
+  pushd $1
+  git fetch --all --prune
+  git checkout main
+  git pull
+  popd
+}
+
+function update_all_repos() {
+  for repo in $(ls)
+    update_repo $repo
+}

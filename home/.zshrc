@@ -50,6 +50,8 @@ if [ -n "$TMUX" ]; then
 else
   export EDITOR='vimr'
 fi
+alias vim='nvim'
+alias mvim='vimr'
 
 export LESS='-m'
 
@@ -57,11 +59,6 @@ export LESS='-m'
 # Perl settings
 # ----------------------------------------
 export PERL5LIB=$HOME/perl5/lib/perl5
-
-# ----------------------------------------
-# Get Vim Path
-# ----------------------------------------
-# export VIMRUNTIME=`vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015' `
 
 # ----------------------------------------
 # Gnu PG Settings
@@ -139,11 +136,6 @@ export dirstacksize=5
 # --------------------------------------------------
 alias curl='noglob curl'
 
-# --------------------------------------------------
-# Iterm 2 Shell integration
-# --------------------------------------------------
-#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 eval "$(starship init zsh)"
 
 # >>> conda initialize >>>
@@ -164,7 +156,7 @@ unset __conda_setup
 # ----------------------------------------
 # Powerline
 # ----------------------------------------
-export POWERLINE_DIR=/usr/local/lib/python3.8/site-packages/powerline
+export POWERLINE_DIR=/usr/local/lib/python3.11/site-packages/powerline
 
 # Source powerline status bar
 export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
