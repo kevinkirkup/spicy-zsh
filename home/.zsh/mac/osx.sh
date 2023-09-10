@@ -151,5 +151,11 @@ PERL_MM_OPT="INSTALL_BASE=/Users/kevinkirkup/perl5"; export PERL_MM_OPT;
 
 # Show some cow love if we aren't in Tmux
 if [ -z "$TMUX" ]; then
-  fortune | cowsay -f $(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+  if [[ $(uname -p) -eq "arm" ]]; then
+    COW=$(ls $COWPATH/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+  else
+    COW=$(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+  fi
+
+  fortune | cowsay -f $COW
 fi
