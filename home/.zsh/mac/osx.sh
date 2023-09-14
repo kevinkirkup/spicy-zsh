@@ -148,6 +148,8 @@ PERL_MM_OPT="INSTALL_BASE=/Users/kevinkirkup/perl5"; export PERL_MM_OPT;
 # ----------------------------------------
 # Cowsay
 # ----------------------------------------
+# Path to my cowfiles
+export COWPATH=~/.cowsay
 
 # Show some cow love if we aren't in Tmux
 if [ -z "$TMUX" ]; then
