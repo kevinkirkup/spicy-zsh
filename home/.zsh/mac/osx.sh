@@ -42,6 +42,7 @@ plugins=(
   # bundler gem rake ruby rbenv
   mix mix-fast rebar
   python pyenv pylint autopep8 celery poetry
+  scala sbt
   # swiftpm
   # gradle
   jsontools
@@ -51,6 +52,12 @@ plugins=(
   ansible
   terraform
 )
+
+# ----------------------------------------------------------
+# Oh-my-ZSH setup
+# ----------------------------------------------------------
+zstyle ':omz:update' mode reminder
+zstyle ':omz:update' frequency 7
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,6 +114,11 @@ alias calm='/usr/bin/cal $(date "+%m %Y")'
 
 # List the OSX USB Device Tree
 alias usbtree='system_profiler SPUSBDataType'
+
+# ----------------------------------------
+# Keyboard Maestro
+# ----------------------------------------
+alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboardmaestro'
 
 # ----------------------------------------
 # OSX Java settings
