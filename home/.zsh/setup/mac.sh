@@ -12,8 +12,8 @@ fi
 export PATH=$PATH:$HOME/bin
 
 # >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
 if [[ $(uname -m) -eq "arm64" ]]; then
-  # !! Contents within this block are managed by 'conda init' !!
   __conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
   if [ $? -eq 0 ]; then
       eval "$__conda_setup"
@@ -48,3 +48,5 @@ if [[ $(uname -m) -eq "arm64" ]]; then
 else
   export POWERLINE_DIR=/usr/local/lib/python3.11/site-packages/powerline
 fi
+
+export PATH=$PATH:$HOME/.local/bin

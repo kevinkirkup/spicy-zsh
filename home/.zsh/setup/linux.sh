@@ -20,7 +20,7 @@ if [ -d "/opt/anaconda3" ]; then
         if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
             . "/opt/anaconda3/etc/profile.d/conda.sh"
         else
-            export PATH="/Users/kevinkirkup/anaconda3/bin:$PATH"
+            export PATH="/opt/anaconda3/bin:$PATH"
         fi
     fi
 
@@ -39,8 +39,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# ----------------------------------------
-# Powerline
-# ----------------------------------------
-export POWERLINE_DIR=/usr/local/lib/python3.11/site-packages/powerline

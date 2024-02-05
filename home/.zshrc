@@ -115,6 +115,11 @@ export dirstacksize=5
 # --------------------------------------------------
 alias curl='noglob curl'
 
+# Platform Setup
+for file in $HOME/.zsh/setup/$platform.sh; do
+  source $file
+done
+
 # Platform specific
 for file in $HOME/.zsh/$platform/*.sh; do
   source $file
@@ -134,19 +139,28 @@ done
 eval "$(starship init zsh)"
 
 # ----------------------------------------
-# Powerline
+# Cowsay
 # ----------------------------------------
-if [[ $(uname -m) -eq "arm64" ]]; then
-  export POWERLINE_DIR=/opt/homebrew/lib/python3.11/site-packages/powerline
-else
-  export POWERLINE_DIR=/usr/local/lib/python3.11/site-packages/powerline
+# Path to my cowfiles
+export COWPATH=~/.cowsay
+
+# Show some cow love if we aren't in Tmux
+if [ -z "$TMUX" ]; then
+  if [ -d $COWPATH ]; then
+    COW=$(ls $COWPATH/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+  else
+    COW=$(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+  fi
+
+  fortune | cowsay -f $COW
 fi
 
+# ----------------------------------------
+# Powerline
+# ----------------------------------------
 # Source powerline status bar
 export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
 export POWERLINE_NO_ZSH_PROMPT="YES"
-
-export PATH=$PATH:$HOME/.local/bin
 
 # Make sure the powerline daemon is running
 powerline-daemon -q
