@@ -24,7 +24,7 @@ export ARCHFLAGS="-arch x86_64"
 # ----------------------------------------
 # Additional path
 # ----------------------------------------
-if [[ $(uname -p) -eq "arm" ]]; then
+if [[ $(uname -m) -eq "arm64" ]]; then
   export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:
   export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:
 else
@@ -56,7 +56,6 @@ else
   export EDITOR='vimr'
 fi
 alias vim='nvim'
-alias mvim='vimr'
 
 export LESS='-m'
 
@@ -144,7 +143,7 @@ alias curl='noglob curl'
 eval "$(starship init zsh)"
 
 # >>> conda initialize >>>
-if [[ $(uname -p) -eq "arm" ]]; then
+if [[ $(uname -m) -eq "arm64" ]]; then
   # !! Contents within this block are managed by 'conda init' !!
   __conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
   if [ $? -eq 0 ]; then
@@ -175,7 +174,7 @@ unset __conda_setup
 # ----------------------------------------
 # Powerline
 # ----------------------------------------
-if [[ $(uname -p) -eq "arm" ]]; then
+if [[ $(uname -m) -eq "arm64" ]]; then
   export POWERLINE_DIR=/opt/homebrew/lib/python3.11/site-packages/powerline
 else
   export POWERLINE_DIR=/usr/local/lib/python3.11/site-packages/powerline
