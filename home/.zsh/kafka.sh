@@ -42,10 +42,15 @@ dump_topic() {
 # Print the list of Topics
 # --------------------------------------------------
 list_topics() {
-
   local BROKER=${1:-localhost:10092}
 
   kcat -b ${BROKER} -L | grep "topic" | awk -F' ' 'BEGIN{ print "\033[34m\033[1m--------------" } { if (FNR>2){ print $2 } else if (FNR==2){ print $0 "\n--------------\033[0m" } else { print $0 }}' | tr -d '"'
+}
+
+kafka_topics() {
+  local KAFKA_REST=${1:-localhost:10082}
+
+  curl "http://${KAFKA_REST}/topics" | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
 }
 
 # --------------------------------------------------
@@ -53,25 +58,32 @@ list_topics() {
 # --------------------------------------------------
 kafka_connectors() {
   local KAFKA_CONNECT=${1:-localhost:10083}
+
   curl "http://${KAFKA_CONNECT}/connectors" | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
+}
+
+list_connector() {
+  local KAFKA_CONNECTOR=$1
+  local KAFKA_CONNECT=${2:-localhost:10083}
+
+  curl "http://${KAFKA_CONNECT}/connectors/${KAFKA_CONNECTOR}" | jq '.'
 }
 
 # --------------------------------------------------
 # Print the list of Kafka Connect Connectors
 # --------------------------------------------------
-kafka_topics() {
-  local KAFKA_REST=${1:-localhost:10082}
-  curl "http://${KAFKA_REST}/topics" | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
+list_subjects() {
+  local KAFKA_SCHEMA_REGISTRY=${1:-localhost:10081}
+
+  curl "http://${KAFKA_CONNECT}/subjects" | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
 }
 
 # --------------------------------------------------
 # Print the partitions and their current offsets and timestamp
 # --------------------------------------------------
 list_partition_offsets() {
-
   local TOPIC=$1
   local BROKER=${2:-localhost:10092}
-
   local PARITION_COUNT=$(kcat -b ${BROKER} -t ${TOPIC} -L -J | jq '.topics[0].partitions | length')
 
   for i in {0..${PARITION_COUNT}}; do
