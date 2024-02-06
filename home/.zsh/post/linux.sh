@@ -36,3 +36,18 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# ----------------------------------------
+# Powerline
+# ----------------------------------------
+export POWERLINE_DIR=/opt/anaconda3/lib/python3.11/site-packages/powerline
+
+export PATH=$PATH:$HOME/.local/bin
+
+# Source powerline status bar
+export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
+export POWERLINE_NO_ZSH_PROMPT="YES"
+
+# Make sure the powerline daemon is running
+powerline-daemon -q
+source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh

@@ -50,3 +50,11 @@ else
 fi
 
 export PATH=$PATH:$HOME/.local/bin
+
+# Source powerline status bar
+export POWERLINE_NO_ZSH_TMUX_SUPPORT="YES"
+export POWERLINE_NO_ZSH_PROMPT="YES"
+
+# Make sure the powerline daemon is running
+powerline-daemon -q
+source ${POWERLINE_DIR}/bindings/zsh/powerline.zsh
