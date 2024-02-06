@@ -96,14 +96,22 @@ zstyle :omz:plugins:ssh-agent lifetime 30m
 # ----------------------------------------
 # Linux Java settings
 # ----------------------------------------
-export JAVA_HOME=/opt/jdk/jdk1.8.0_20
-export PATH=$PATH:/opt/jdk/jdk1.8.0_20/bin
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$PATH:/usr/lib/jvm/java-17-openjdk-amd64/bin
+
+# ----------------------------------------
+# Perl library path
+# ----------------------------------------
+PATH="/home/kevinkirkup/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/kevinkirkup/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/kevinkirkup/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/kevinkirkup/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/kevinkirkup/perl5"; export PERL_MM_OPT;
 
 # ----------------------------------------
 # Python settings
 # ----------------------------------------
-alias python=python3
-alias pip=pip3
+export PYTHONPATH=/opt/anaconda3/bin/python3
 
 # ----------------------------------------
 # Powerline
