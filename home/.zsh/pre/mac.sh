@@ -140,7 +140,7 @@ export PATH=$PATH:/Developer/usr/bin
 export PATH=$PATH:${HOME}/Library/Python/2.7/bin
 export PATH=$PATH:${HOME}/Library/Python/3.10/bin
 
-#Postgres App
+# Postgres App
 export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
 
 # ----------------------------------------
@@ -156,20 +156,3 @@ PERL5LIB="/Users/kevinkirkup/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export P
 PERL_LOCAL_LIB_ROOT="/Users/kevinkirkup/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/kevinkirkup/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/kevinkirkup/perl5"; export PERL_MM_OPT;
-
-# ----------------------------------------
-# Cowsay
-# ----------------------------------------
-# Path to my cowfiles
-export COWPATH=~/.cowsay
-
-# Show some cow love if we aren't in Tmux
-if [ -z "$TMUX" ]; then
-  if [[ $(uname -p) -eq "arm" ]]; then
-    COW=$(ls $COWPATH/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
-  else
-    COW=$(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
-  fi
-
-  fortune | cowsay -f $COW
-fi
