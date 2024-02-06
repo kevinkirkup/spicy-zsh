@@ -115,23 +115,28 @@ export dirstacksize=5
 # --------------------------------------------------
 alias curl='noglob curl'
 
-# Platform Setup
-for file in $HOME/.zsh/setup/$platform.sh; do
+# Platform Pre Setup
+for file in $HOME/.zsh/pre/$platform.sh; do
   source $file
 done
 
 # Platform specific
-for file in $HOME/.zsh/$platform/*.sh; do
+for file in $HOME/.zsh/setup/$platform/*.sh; do
   source $file
 done
 
 # Local
-for file in $HOME/.zsh/local/*.sh; do
+for file in $HOME/.zsh/setup/local/*.sh; do
   source $file
 done
 
 # generic
-for file in $HOME/.zsh/*.sh; do
+for file in $HOME/.zsh/setup/*.sh; do
+  source $file
+done
+
+# Platform Post Setup
+for file in $HOME/.zsh/post/$platform.sh; do
   source $file
 done
 

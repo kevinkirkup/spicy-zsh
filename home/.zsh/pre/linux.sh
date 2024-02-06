@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -98,6 +98,12 @@ zstyle :omz:plugins:ssh-agent lifetime 30m
 # ----------------------------------------
 export JAVA_HOME=/opt/jdk/jdk1.8.0_20
 export PATH=$PATH:/opt/jdk/jdk1.8.0_20/bin
+
+# ----------------------------------------
+# Python settings
+# ----------------------------------------
+alias python=python3
+alias pip=pip3
 
 # ----------------------------------------
 # Powerline
