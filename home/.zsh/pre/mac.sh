@@ -125,7 +125,6 @@ alias keyboardmaestro='/Applications/Keyboard\ Maestro.app/Contents/MacOS/keyboa
 # ----------------------------------------
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-
 # ----------------------------------------
 # Additional PATH
 # ----------------------------------------
