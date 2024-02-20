@@ -118,7 +118,6 @@ function timestamp() {
 # --------------------------------------------------
 # Highlight & Formatting
 # --------------------------------------------------
-alias cat='bat'
 
 # LS Scripts
 alias l='exa -lCF --color=auto'

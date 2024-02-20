@@ -4,10 +4,10 @@
 # Additional path
 # ----------------------------------------
 if [[ $(uname -m) -eq "arm64" ]]; then
-  export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:
+  export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin:
   export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:
 else
-  export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:
+  export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:
 fi
 export PATH=$PATH:$HOME/bin
 
