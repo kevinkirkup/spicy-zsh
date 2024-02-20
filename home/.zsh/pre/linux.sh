@@ -114,13 +114,14 @@ PERL_MB_OPT="--install_base \"/home/kevinkirkup/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/kevinkirkup/perl5"; export PERL_MM_OPT;
 
 # ----------------------------------------
-# Python settings
-# ----------------------------------------
-export PYTHONPATH=/opt/anaconda3/bin/python3
-
-# ----------------------------------------
 # Powerline
 # ----------------------------------------
 export POWERLINE_DIR=/home/kevinkirkup/.local/lib/python2.7/site-packages/powerline
 
 export PATH=$PATH:$HOME/.local/bin
+
+# --------------------------------------------------
+# Highlight & Formatting
+# --------------------------------------------------
+alias cat='/usr/bin/batcat'
+alias bat='/usr/bin/batcat'
