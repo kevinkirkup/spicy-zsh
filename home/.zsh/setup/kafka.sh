@@ -11,7 +11,8 @@ export KAFKA_BOOTSTRAP_SERVER=localhost:10092
 tail_topic() {
   local TOPIC=$1
   local EXTRA_ARGS=$2
-  local BROKER=${3:-localhost:10092}
+  local BROKER=${3:-127.0.2.1:9092}
+  local SCHEMA_REGISTRY=${3:-localhost:10081}
 
   if [[ -z $TOPIC ]]; then
     echo Must specify topic to tail!
@@ -19,7 +20,13 @@ tail_topic() {
     return
   fi
 
-  unbuffer kcat -b ${BROKER} -t ${TOPIC} -C ${EXTRA_ARGS} -f "\nOffset %o [%p] %k\n%s" | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
+  unbuffer kcat \
+    -b ${BROKER} \
+    -t ${TOPIC} \
+    -r ${SCHEMA_REGISTRY} \
+    -C ${EXTRA_ARGS} \
+    -f "\nOffset %o [%p] %k\n%s" \
+    | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
 }
 
 # --------------------------------------------------
@@ -27,7 +34,8 @@ tail_topic() {
 # --------------------------------------------------
 dump_topic() {
   local TOPIC=$1
-  local BROKER=${2:-localhost:10092}
+  local BROKER=${2:-127.0.2.1:9092}
+  local SCHEMA_REGISTRY=${3:-localhost:10081}
 
   if [[ -z $TOPIC ]]; then
     echo Must specify topic to tail!
@@ -35,22 +43,32 @@ dump_topic() {
     return
   fi
 
-  unbuffer kcat -b ${BROKER} -t ${TOPIC} -q -C -o beginning -e -f "\nOffset %o [%p] %k\t%s" 2>/dev/null
+  unbuffer kcat \
+    -b ${BROKER} \
+    -t ${TOPIC} \
+    -r ${SCHEMA_REGISTRY} \
+    -e -q -C \
+    -o beginning \
+    -f "\nOffset %o [%p] %k\t%s" 2>/dev/null
 }
 
 # --------------------------------------------------
 # Print the list of Topics
 # --------------------------------------------------
 list_topics() {
-  local BROKER=${1:-localhost:10092}
+  local BROKER=${1:-127.0.2.1:9092}
 
-  kcat -b ${BROKER} -L | grep "topic" | awk -F' ' 'BEGIN{ print "\033[34m\033[1m--------------" } { if (FNR>2){ print $2 } else if (FNR==2){ print $0 "\n--------------\033[0m" } else { print $0 }}' | tr -d '"'
+  kcat -b ${BROKER} -L \
+    | grep "topic" \
+    | awk -F' ' 'BEGIN{ print "\033[34m\033[1m--------------" } { if (FNR>2){ print $2 } else if (FNR==2){ print $0 "\n--------------\033[0m" } else { print $0 }}' \
+    | tr -d '"'
 }
 
 kafka_topics() {
   local KAFKA_REST=${1:-localhost:10082}
 
-  curl "http://${KAFKA_REST}/topics" | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
+  curl "http://${KAFKA_REST}/topics" \
+    | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
 }
 
 # --------------------------------------------------
@@ -59,23 +77,25 @@ kafka_topics() {
 kafka_connectors() {
   local KAFKA_CONNECT=${1:-localhost:10083}
 
-  curl "http://${KAFKA_CONNECT}/connectors" | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
+  curl -k "https://${KAFKA_CONNECT}/connectors" \
+    | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
 }
 
 list_connector() {
   local KAFKA_CONNECTOR=$1
   local KAFKA_CONNECT=${2:-localhost:10083}
 
-  curl "http://${KAFKA_CONNECT}/connectors/${KAFKA_CONNECTOR}" | jq '.'
+  curl -k "https://${KAFKA_CONNECT}/connectors/${KAFKA_CONNECTOR}" | jq '.'
 }
 
 # --------------------------------------------------
-# Print the list of Kafka Connect Connectors
+# Print the list of Kafka Schema Registry Subjects
 # --------------------------------------------------
 list_subjects() {
   local KAFKA_SCHEMA_REGISTRY=${1:-localhost:10081}
 
-  curl "http://${KAFKA_CONNECT}/subjects" | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
+  curl -k "https://${KAFKA_SCHEMA_REGISTRY}/subjects" \
+    | jq -S --unbuffered -R -r '. as $line | try fromjson catch $line'
 }
 
 # --------------------------------------------------
@@ -83,7 +103,7 @@ list_subjects() {
 # --------------------------------------------------
 list_partition_offsets() {
   local TOPIC=$1
-  local BROKER=${2:-localhost:10092}
+  local BROKER=${2:-127.0.2.1:9092}
   local PARITION_COUNT=$(kcat -b ${BROKER} -t ${TOPIC} -L -J | jq '.topics[0].partitions | length')
 
   for i in {0..${PARITION_COUNT}}; do

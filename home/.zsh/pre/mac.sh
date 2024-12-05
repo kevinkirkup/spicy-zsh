@@ -30,6 +30,7 @@ plugins=(
   web-search
   grc
   nmap
+  zoxide
   brew macos xcode pod
   keychain marked2
   tmux # tmuxinator

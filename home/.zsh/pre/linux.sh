@@ -31,6 +31,7 @@ plugins=(
   grc
   nmap
   sudo
+  zoxide
   tmux tmuxinator
   docker docker-compose # docker-machine boot2docker
   kubectl # oc helm kops

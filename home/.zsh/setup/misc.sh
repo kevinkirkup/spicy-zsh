@@ -120,10 +120,10 @@ function timestamp() {
 # --------------------------------------------------
 
 # LS Scripts
-alias l='exa -lCF --color=auto'
-alias ll='exa -laF --color=auto'
-alias ls='exa -F --color=auto'
-alias lsp='exa -F | less'
+alias l='eza -lCF --color=auto'
+alias ll='eza -laF --color=auto'
+alias ls='eza -F --color=auto'
+alias lsp='eza -F | less'
 
 # Use bat for MANPAGER
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
