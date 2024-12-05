@@ -27,6 +27,7 @@ export ARCHFLAGS="-arch $(uname -m)"
 # ----------------------------------------
 #export TERM="xterm-256color"
 
+
 # ----------------------------------------
 # Python
 # ----------------------------------------
@@ -43,7 +44,7 @@ set -o vi
 if [ -n "$TMUX" ]; then
   export EDITOR='nvim'
 else
-  export EDITOR='vimr'
+  export EDITOR='neovide'
 fi
 alias vim='nvim'
 
@@ -138,6 +139,9 @@ done
 # Starship setup
 eval "$(starship init zsh)"
 
+# Setup zoxide
+eval "$(zoxide init zsh)"
+
 # Platform Post Setup
 for file in $HOME/.zsh/post/$platform.sh; do
   source $file
@@ -159,3 +163,6 @@ if [ -z "$TMUX" ]; then
 
   fortune | cowsay -f $COW
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kevinkirkup/.cache/lm-studio/bin"
