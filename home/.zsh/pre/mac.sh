@@ -41,9 +41,9 @@ plugins=(
   # golang
   rust
   # bundler gem rake ruby rbenv
-  mix mix-fast rebar
-  python pyenv pylint autopep8 celery poetry
-  scala sbt
+  mix rebar
+  python pylint celery poetry uv
+  # scala sbt
   # swiftpm
   # gradle
   jsontools
@@ -141,7 +141,7 @@ export PATH=$PATH:${HOME}/Library/Python/2.7/bin
 export PATH=$PATH:${HOME}/Library/Python/3.10/bin
 
 # Postgres App
-export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
+export PATH=/opt/homebrew/opt/postgresql@17/bin:$PATH
 
 # ----------------------------------------
 # TCL library path
