@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export ARCHFLAGS="-arch $(uname -m)"
+
 export PYTHONSTARTUP=$HOME/.python/startup.py
 export GPG_TTY=$(tty)
 export HISTSIZE=4096
@@ -12,7 +16,6 @@ if [ -n "$TMUX" ]; then
 else
   export EDITOR='neovide'
 fi
-alias vim='nvim'
 
 GREP_OPTIONS="--exclude=.git --exclude=.svn"
 export GREP_OPTIONS

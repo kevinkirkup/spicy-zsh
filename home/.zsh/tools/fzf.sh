@@ -11,11 +11,11 @@ export FZF_DEFAULT_COMMAND='rg -l --ignore-file ~/.ignore --color never --hidden
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias preview=fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
+alias preview='fzf --preview '"'"'bat --style=numbers --color=always --line-range :500 {}'"'"''
 
 # Press F1 to open the file with less without leaving fzf
 # Press CTRL-Y to copy the line to clipboard and aborts fzf (requires pbcopy)
-alias fzf_copy=fzf --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort'
+alias fzf_copy='fzf --bind '"'"'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort'"'"''
 
 # --------------------------------------------------
 # File Opening
@@ -194,15 +194,7 @@ function ds() {
   [ -n "$cid" ] && docker stop "$cid"
 }
 
-# Select a docker container to remove
-function drm() {
-  local cid
-  cid=$(docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
-
-  [ -n "$cid" ] && docker rm "$cid"
-}
-
-# Same as above, but allows multi selection:
+# Select a docker container to remove (multi-select)
 function drm() {
   docker ps -a | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $1 }' | xargs -r docker rm
 }

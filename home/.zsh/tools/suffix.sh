@@ -1,4 +1,4 @@
-#!/usr/local/env zsh
+#!/usr/bin/env zsh
 
 # alias -s html=mate
 # alias -s css=mate

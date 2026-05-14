@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+CASE_SENSITIVE="true"
+
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sporty_256"
 

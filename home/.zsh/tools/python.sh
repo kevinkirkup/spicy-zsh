@@ -1,4 +1,4 @@
-#!/usr/local/env zsh
+#!/usr/bin/env zsh
 
 # Force color output from pytest
 export PYTEST_ADDOPTS="--color=yes"

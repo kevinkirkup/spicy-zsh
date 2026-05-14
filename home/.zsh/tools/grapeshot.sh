@@ -1,4 +1,4 @@
-#!/usr/local/env zsh
+#!/usr/bin/env zsh
 
 ############################################################
 # Function to capture the multicast traffic for the specified

@@ -61,6 +61,7 @@ function update_repo() {
 }
 
 function update_all_repos() {
-  for repo in $(ls)
+  for repo in $(ls); do
     update_repo $repo
+  done
 }

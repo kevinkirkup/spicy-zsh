@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 alias curl='noglob curl'
+alias vim='nvim'
 alias less='less -R'
 alias pp='ps auxf | pager'
 
