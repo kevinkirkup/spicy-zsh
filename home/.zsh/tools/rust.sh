@@ -17,3 +17,4 @@ function r_install_tools() {
   cargo install cargo-checkmate
 }
 
+[[ $platform == mac ]] && export PATH="$(brew --prefix)/opt/rustup/bin:$PATH"

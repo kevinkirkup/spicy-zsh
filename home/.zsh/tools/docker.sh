@@ -63,3 +63,10 @@ function docker_machine_hyperkit() {
 function docker_machine_vbox() {
   docker-machine create default --driver virtualbox --virtualbox-memory 4096 --virtualbox-cpu-count 4 --virtualbox-ui-type "headless"
 }
+
+if [[ $platform == mac ]]; then
+  function update_docker_time() {
+    eval $(docker-machine env default)
+    docker run --privileged --rm alpine date -s "$(date -u "+%Y-%m-%d %H:%M:%S")"
+  }
+fi
