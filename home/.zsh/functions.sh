@@ -1,11 +1,22 @@
 #!/usr/bin/env zsh
+#
+# General utility functions. Tool-specific functions (docker, fzf, git, etc.)
+# live in their respective tools/*.sh files. Mac-only functions are grouped
+# at the bottom under an inline [[ $platform == mac ]] guard.
 
+# Filesystem
 function lt { ls -1trsa "$@" | tail; }
-function psgrep() { ps auxf | grep -v grep | grep "$@" -i --color=auto; }
 function fname() { find . -iname "*$@*"; }
-function remove_lines_from { grep -F -x -v -f $2 $1; }
 function mcd() { mkdir $1 && cd $1; }
+function remove_lines_from { grep -F -x -v -f $2 $1; }
 
+# Process inspection
+function psgrep() { ps auxf | grep -v grep | grep "$@" -i --color=auto; }
+function killit() {
+  ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill
+}
+
+# History
 function grep_history() {
   if [ ! -z "$1" ]; then
     history | grep "$1" | grep -v histg
@@ -15,14 +26,12 @@ function grep_history() {
 }
 alias histg='grep_history'
 
-function killit() {
-  ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill
-}
-
+# Security / certificates
 function create_ssl_certificates() {
   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout $1.key -out $1.crt
 }
 
+# Data conversion
 function json2yaml() {
   local JSON_FILE=$1
   local YAML_FILE="${JSON_FILE%.json}.yml"
@@ -40,6 +49,7 @@ function timestamp() {
   echo $BUILD_DATE | sed 's/[T:-]//g'
 }
 
+# Mac-only
 if [[ $platform == mac ]]; then
   function enable_preview_selection() {
     defaults write com.apple.finder QLEnableTextSelection -bool TRUE

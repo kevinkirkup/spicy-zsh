@@ -1,4 +1,13 @@
 #!/bin/zsh
+#
+# Load order:
+#   omz.sh      — oh-my-zsh init, plugin list, theme, prompt
+#   path.sh     — all PATH additions (platform-split inline)
+#   exports.sh  — env vars, ZSH options (setopt)
+#   aliases.sh  — all aliases (platform-split inline)
+#   functions.sh — general utility functions
+#   tools/*.sh  — one file per external tool, sourced alphabetically
+#   .zshrc.local — machine-local overrides (gitignored)
 
 platform='unknown'
 [[ $(uname) == 'Linux' ]]  && platform='linux'
