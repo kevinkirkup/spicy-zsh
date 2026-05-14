@@ -32,7 +32,6 @@ if [[ $platform == mac ]]; then
   PERL_MM_OPT="INSTALL_BASE=/Users/kevinkirkup/perl5"; export PERL_MM_OPT
 else
   export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-  export PATH=$PATH:/usr/lib/jvm/java-17-openjdk-amd64/bin
   export POWERLINE_DIR=/opt/anaconda3/lib/python3.11/site-packages/powerline
   PERL_LOCAL_LIB_ROOT="/home/kevinkirkup/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT
   PERL_MB_OPT="--install_base \"/home/kevinkirkup/perl5\""; export PERL_MB_OPT

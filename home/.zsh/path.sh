@@ -12,6 +12,7 @@ if [[ $platform == mac ]]; then
   PATH="/Users/kevinkirkup/perl5/bin${PATH:+:${PATH}}"; export PATH
 else
   export PATH=$PATH:/opt/games
+  export PATH=$PATH:/usr/lib/jvm/java-17-openjdk-amd64/bin
   PATH="/home/kevinkirkup/perl5/bin${PATH:+:${PATH}}"; export PATH
 fi
 
