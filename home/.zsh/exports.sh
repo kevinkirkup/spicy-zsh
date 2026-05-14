@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+export AWS_VAULT_BACKEND=keychain
+
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export ARCHFLAGS="-arch $(uname -m)"
