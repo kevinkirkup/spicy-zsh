@@ -74,10 +74,10 @@ if [[ $platform == mac ]]; then
 fi
 
 if [ -z "$TMUX" ]; then
-  if [ -d $COWPATH ]; then
-    COW=$(ls $COWPATH/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+  if [ -d "$COWPATH" ]; then
+    COW=$(ls "$COWPATH"/* | sort -R | head -1)
   else
-    COW=$(ls /usr/local/share/cows/* | awk 'BEGIN { srand() } rand() >=0.5 { print; exit }')
+    COW=$(ls /usr/local/share/cows/* | sort -R | head -1)
   fi
-  fortune | cowsay -f $COW
+  fortune | cowsay -f "$COW"
 fi

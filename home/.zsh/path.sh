@@ -2,9 +2,12 @@
 
 if [[ $platform == mac ]]; then
   if [[ $(uname -m) == "arm64" ]]; then
+    # /usr/local/bin, /usr/bin, ... are already seeded by /etc/paths, so just
+    # prepend Homebrew here to make /opt/homebrew/bin win over the system paths.
     export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+  else
+    export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH
   fi
-  export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH
   export PATH=$PATH:/Developer/usr/bin
   export PATH=$PATH:${HOME}/Library/Python/2.7/bin
   export PATH=$PATH:${HOME}/Library/Python/3.10/bin

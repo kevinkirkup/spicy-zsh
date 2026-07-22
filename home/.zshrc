@@ -24,3 +24,8 @@ for f in ~/.zsh/tools/*.sh; do source "$f"; done
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kevinkirkup/.lmstudio/bin"
+# End of LM Studio CLI section
+
